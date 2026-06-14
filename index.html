@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Celebração dos 40 anos da Thais — um convite para conhecer o mundo e viver experiências inesquecíveis.">
+  <title>Thaís 40 — O Convite</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ========== Header / TopAppBar ========== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <div class="header-logo">40 anos da Thaís</div>
+
+      <nav class="header-nav">
+        <a href="#hero" class="active">O Convite</a>
+        <a href="#sonho">A Jornada</a>
+        <a href="#presentes">Lista de Presentes</a>
+      </nav>
+
+      <a href="#presentes" class="header-cta btn-primary" style="padding: 10px 24px; font-size: 11px;">
+        Conheça os Presentes
+      </a>
+
+      <button class="mobile-menu-btn" aria-label="Abrir menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" aria-label="Fechar menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <a href="#hero">O Convite</a>
+    <a href="#sonho">A Jornada</a>
+    <a href="#presentes">Lista de Presentes</a>
+  </div>
+
+  <!-- ========== Main Content ========== -->
+  <main>
+
+    <!-- ========== Hero Section ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img src="Img/fotosThais/thais2.jpeg" alt="Thais sorrindo elegantemente em um ambiente sofisticado">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content glass-panel fade-up">
+        <h1 class="hero-title">
+          40 anos de Thaís
+        </h1>
+        <p class="hero-text">
+          Chegar aos 40 anos é celebrar memórias, conquistas e novos sonhos.
+          Entre eles, existe um desejo especial: conhecer o mundo e viver experiências inesquecíveis.
+        </p>
+        <p class="hero-subtext">
+          Em vez de presentes tradicionais, cada contribuição representa uma pequena experiência
+          que fará parte das futuras aventuras da Thais ao redor do mundo.
+        </p>
+        <a href="#presentes" class="btn-primary hero-cta">
+          Conheça os presentes
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== Seção: Um sonho chamado viajar ========== -->
+    <section class="section-dream" id="sonho">
+      <div class="container">
+        <div class="fade-up">
+          <h2 class="section-title">Um sonho chamado viajar</h2>
+          <div class="gold-divider"></div>
+          <p class="section-text">
+            A vida é feita de momentos, e alguns dos mais especiais ainda estão por vir.
+            Cada presente desta lista representa um pedacinho de uma futura viagem,
+            transformando carinho em memórias inesquecíveis.
+          </p>
+
+          <!-- Ícone de avião -->
+          <div class="section-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Foto da Thais -->
+        <div class="dream-image-container fade-up">
+          <div class="dream-image">
+            <img src="Img/fotosThais/thais6.jpeg"
+              alt="Thais sorrindo com paisagem natural ao fundo, representando o sonho de viajar">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Seção de Presentes (placeholder) ========== -->
+    <section id="presentes">
+      <!-- A lista de presentes será implementada em uma próxima etapa -->
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Thaís 40</div>
+      <p class="footer-text">
+        Mais do que uma viagem, cada presente representa carinho, lembranças
+        e experiências que ficarão para sempre. Com amor, Thais ❤️
+      </p>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
