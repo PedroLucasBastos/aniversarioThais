@@ -196,9 +196,9 @@ button {
 
 /* ---------- Glass Panel ---------- */
 .glass-panel {
-  background: rgba(250, 248, 243, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(250, 248, 243, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(201, 165, 92, 0.2);
 }
 
@@ -420,13 +420,22 @@ button {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background-color: #FAF8F3; /* Fundo pérola idêntico ao site para as laterais em branco */
 }
 
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+/* Slides do slideshow */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
 }
 
 .hero-overlay {
@@ -567,13 +576,20 @@ button {
 
 .dream-image img {
   width: 100%;
-  height: 360px;
+  height: 110%;
   object-fit: cover;
   object-position: center top;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* altura base para o parallax ter margem de movimento */
+.dream-image {
+  height: 360px;
 }
 
 @media (min-width: 768px) {
-  .dream-image img {
+  .dream-image {
     height: 450px;
   }
 }
@@ -879,6 +895,10 @@ button {
 
 /* ---------- Responsividade ---------- */
 @media (max-width: 767px) {
+  .hero-slide {
+    background-size: cover;
+  }
+
   .hero-content {
     padding: 24px 20px;
   }
@@ -908,8 +928,12 @@ button {
     font-size: 16px;
   }
 
-  .dream-image img {
+  .dream-image {
     height: 280px;
+  }
+
+  .dream-image img {
+    height: 110%;
   }
 
   .gift-category-header {
