@@ -18,7 +18,7 @@ const gifts = [
     cor: '#E8C9A0',
     imagem: 'Img/FotosLugares/GelatoVeneza.jpg',
     qrCode: 'Img/qrcodes/gelato.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_GELATO_R$40'
+    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F'
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const gifts = [
     cor: '#C8B49A',
     imagem: 'Img/FotosLugares/cafe-paris.jpg',
     qrCode: 'Img/qrcodes/cafe-paris.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_CAFE_PARIS_R$50'
+    pixCopiaECola: '' // adicionar chave Pix
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const gifts = [
     cor: '#D4B896',
     imagem: 'Img/FotosLugares/croissant-lisboa.jpg',
     qrCode: 'Img/qrcodes/croissant-lisboa.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_CROISSANT_R$75'
+    pixCopiaECola: '' // adicionar chave Pix
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ const gifts = [
     cor: '#B8A0A0',
     imagem: 'Img/FotosLugares/vinho-portugal.jpg',
     qrCode: 'Img/qrcodes/vinho-portugal.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_VINHO_R$80'
+    pixCopiaECola: '' // adicionar chave Pix
   },
 
   /* ── Categoria 2: Experiências Inesquecíveis ── */
@@ -72,7 +72,7 @@ const gifts = [
     cor: '#A0B8C8',
     imagem: 'Img/FotosLugares/barco-grecia.jpg',
     qrCode: 'Img/qrcodes/barco-grecia.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_BARCO_R$100'
+    pixCopiaECola: '' // adicionar chave Pix
   },
   {
     id: 6,
@@ -85,7 +85,7 @@ const gifts = [
     cor: '#C4A882',
     imagem: 'Img/FotosLugares/jantar-roma.jpg',
     qrCode: 'Img/qrcodes/jantar-roma.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_JANTAR_ROMA_R$150'
+    pixCopiaECola: '' // adicionar chave Pix
   },
   {
     id: 7,
@@ -98,7 +98,7 @@ const gifts = [
     cor: '#B4BCCC',
     imagem: 'Img/FotosLugares/museus-franca.jpg',
     qrCode: 'Img/qrcodes/museus-franca.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_MUSEUS_R$200'
+    pixCopiaECola: '' // adicionar chave Pix
   },
 
   /* ── Categoria 3: Sonhos Maiores ── */
@@ -113,7 +113,7 @@ const gifts = [
     cor: '#B0C4C8',
     imagem: 'Img/FotosLugares/bariloche.jpg',
     qrCode: 'Img/qrcodes/bariloche.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_BARILOCHE_R$250'
+    pixCopiaECola: '' // adicionar chave Pix
   },
   {
     id: 9,
@@ -126,7 +126,7 @@ const gifts = [
     cor: '#C8C0D8',
     imagem: 'Img/FotosLugares/disney.jpg',
     qrCode: 'Img/qrcodes/disney.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_DISNEY_R$300'
+    pixCopiaECola: '' // adicionar chave Pix
   },
   {
     id: 10,
@@ -139,7 +139,7 @@ const gifts = [
     cor: '#C8C0A0',
     imagem: 'Img/FotosLugares/helicoptero-dubai.jpg',
     qrCode: 'Img/qrcodes/helicoptero-dubai.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_HELICOPTERO_R$350'
+    pixCopiaECola: '' // adicionar chave Pix
   },
   {
     id: 11,
@@ -152,7 +152,7 @@ const gifts = [
     cor: '#A0A8B8',
     imagem: 'Img/FotosLugares/torre-eiffel.jpg',
     qrCode: 'Img/qrcodes/torre-eiffel.png',
-    pixCopiaECola: 'PLACEHOLDER_PIX_TORRE_EIFFEL_R$400'
+    pixCopiaECola: '' // adicionar chave Pix
   }
 
 ];

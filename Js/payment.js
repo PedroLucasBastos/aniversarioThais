@@ -52,26 +52,45 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // QR Code
-  const qrImg         = document.getElementById('qrCodeImg');
+  // ---------- 4. QR Code dinâmico ----------
+  const qrContainer   = document.getElementById('qrCodeContainer');
   const qrPlaceholder = document.getElementById('qrPlaceholder');
+  const copyBtn       = document.getElementById('copyPixBtn');
+  const pixCode       = (gift.pixCopiaECola || '').trim();
 
-  if (qrImg) {
-    qrImg.alt = `QR Code Pix - ${gift.nome}`;
-    qrImg.src = `../${gift.qrCode}`;
-    qrImg.onerror = () => {
-      qrImg.style.display = 'none';
-      if (qrPlaceholder) qrPlaceholder.style.display = 'flex';
-    };
+  if (pixCode && typeof QRCode !== 'undefined') {
+    // Gera o QR Code via biblioteca qrcode.js
+    new QRCode(qrContainer, {
+      text:           pixCode,
+      width:          172,
+      height:         172,
+      colorDark:      '#1B1C19',   // on-surface
+      colorLight:     '#FFFFFF',
+      correctLevel:   QRCode.CorrectLevel.M
+    });
+    // Remove a borda interna do QR (a lib adiciona padding via tabela)
+    qrContainer.style.display = 'flex';
+    qrContainer.style.alignItems = 'center';
+    qrContainer.style.justifyContent = 'center';
+  } else {
+    // Chave Pix ainda não cadastrada → mostra placeholder
+    if (qrContainer)   qrContainer.style.display   = 'none';
+    if (qrPlaceholder) qrPlaceholder.style.display = 'flex';
+
+    // Desabilita visualmente o botão Copiar
+    if (copyBtn) {
+      copyBtn.disabled = true;
+      copyBtn.style.opacity = '0.45';
+      copyBtn.style.cursor  = 'not-allowed';
+      copyBtn.title = 'Chave Pix ainda não disponível';
+    }
   }
 
-  // ---------- 4. Botão Copiar Pix ----------
-  const copyBtn = document.getElementById('copyPixBtn');
-  const toast   = document.getElementById('pixToast');
 
-  if (copyBtn) {
+  const toast = document.getElementById('pixToast');
+
+  if (copyBtn && pixCode) {
     copyBtn.addEventListener('click', async () => {
-      const pixCode = gift.pixCopiaECola;
 
       // Tentar copiar para a área de transferência
       try {
