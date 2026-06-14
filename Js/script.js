@@ -122,4 +122,23 @@ document.addEventListener('DOMContentLoaded', () => {
     handleParallax();
   }
 
+  // ---------- Navegação para a página de pagamento ----------
+  // Usa delegação de eventos na seção de presentes para maior performance.
+  const giftsSection = document.getElementById('presentes');
+
+  if (giftsSection) {
+    giftsSection.addEventListener('click', (e) => {
+      // Verifica se o clique foi no card (.gift-card) ou no botão Presentear
+      const card   = e.target.closest('.gift-card');
+      const button = e.target.closest('.gift-card-action button');
+
+      const source  = button || card;
+      const giftId  = source ? source.dataset.giftId : null;
+
+      if (giftId) {
+        window.location.href = `pages/payment.html?id=${giftId}`;
+      }
+    });
+  }
+
 });

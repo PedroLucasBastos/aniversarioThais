@@ -1,0 +1,460 @@
+/* ============================================
+   Thais 40 Anos — Página de Pagamento
+   Design: Golden Jubilee Voyage (Stitch)
+   ============================================ */
+
+/* ---------- Layout principal ---------- */
+.payment-main {
+  flex-grow: 1;
+  padding-top: 112px; /* altura do header fixo + respiro */
+  padding-bottom: var(--section-gap);
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+  animation: pageFadeIn 0.6s ease-out both;
+}
+
+@media (min-width: 768px) {
+  .payment-main {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Botão Voltar ---------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  margin-bottom: 40px;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.back-link:hover {
+  color: var(--primary);
+}
+
+.back-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover svg {
+  transform: translateX(-3px);
+}
+
+/* ---------- Grid de conteúdo ---------- */
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 1024px) {
+  .payment-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
+    align-items: start;
+  }
+}
+
+/* ---------- Coluna da imagem ---------- */
+.payment-image-col {
+  animation: slideInLeft 0.7s ease-out 0.1s both;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.payment-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid rgba(209, 197, 180, 0.2);
+  box-shadow: 0 20px 40px rgba(139, 107, 76, 0.08),
+              0 4px 12px rgba(139, 107, 76, 0.04);
+}
+
+.payment-image-wrapper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.payment-image-wrapper:hover img {
+  transform: scale(1.04);
+}
+
+/* Fallback de cor quando a imagem não existe */
+.payment-image-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-image-fallback-icon {
+  width: 80px;
+  height: 80px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ---------- Coluna de info ---------- */
+.payment-info-col {
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.7s ease-out 0.15s both;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* País (label caps) */
+.payment-country {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  margin-bottom: 12px;
+}
+
+/* Nome do presente */
+.payment-name {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--on-surface);
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .payment-name {
+    font-size: 48px;
+  }
+}
+
+/* Valor */
+.payment-value {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+
+/* Descrição */
+.payment-description {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--on-surface-variant);
+  margin-bottom: 40px;
+}
+
+/* ---------- Card Pix (Glassmorphism) ---------- */
+.pix-card {
+  background: rgba(250, 248, 243, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(209, 197, 180, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 40px 32px;
+  box-shadow: 0 20px 40px rgba(139, 107, 76, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  animation: fadeUp 0.7s ease-out 0.3s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Título do card Pix */
+.pix-card-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* QR Code container */
+.qr-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(201, 165, 92, 0.25);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(139, 107, 76, 0.08);
+  margin-bottom: 20px;
+  position: relative;
+  animation: qrPulse 3s ease-in-out infinite;
+}
+
+@keyframes qrPulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(201, 165, 92, 0.08); }
+  50%       { box-shadow: 0 4px 24px rgba(201, 165, 92, 0.22); }
+}
+
+.qr-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+}
+
+/* Placeholder QR quando imagem não existe */
+.qr-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  background: var(--surface-container-low);
+}
+
+.qr-placeholder-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.qr-placeholder-text {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Instrução */
+.pix-instruction {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--on-surface-variant);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 300px;
+}
+
+/* ---------- Botão Copiar Pix ---------- */
+.btn-pix-copy {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(45deg, var(--gold), var(--gold-light));
+  color: var(--on-primary);
+  padding: 16px 32px;
+  border-radius: var(--radius-full);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-pix-copy:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-pix-copy:active {
+  transform: scale(0.98);
+}
+
+.btn-pix-copy.copied {
+  background: linear-gradient(45deg, #5a7a5a, #7aa87a);
+}
+
+.btn-pix-copy svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ---------- Toast de confirmação ---------- */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  z-index: 500;
+  background: var(--brown-dark);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  white-space: nowrap;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast svg {
+  width: 18px;
+  height: 18px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ---------- Separador dourado ---------- */
+.payment-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 48px auto;
+}
+
+/* ---------- Mensagem de agradecimento ---------- */
+.thank-you-section {
+  text-align: center;
+  padding: 0 16px;
+  animation: fadeUp 0.7s ease-out 0.5s both;
+}
+
+.thank-you-text {
+  font-family: var(--font-script);
+  font-size: 32px;
+  line-height: 1.5;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .thank-you-text {
+    font-size: 40px;
+  }
+}
+
+.thank-you-sub {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ---------- Estado de erro (id inválido) ---------- */
+.payment-error {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.payment-error h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.payment-error p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--on-surface-variant);
+  margin-bottom: 32px;
+}
+
+/* ---------- Responsividade mobile ---------- */
+@media (max-width: 767px) {
+  .payment-main {
+    padding-top: 96px;
+    padding-bottom: var(--section-gap-mobile);
+  }
+
+  .payment-name {
+    font-size: 30px;
+  }
+
+  .payment-value {
+    font-size: 24px;
+  }
+
+  .payment-description {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .pix-card {
+    padding: 28px 20px;
+  }
+
+  .qr-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .thank-you-text {
+    font-size: 28px;
+  }
+
+  .payment-divider {
+    margin: 36px auto;
+  }
+}
