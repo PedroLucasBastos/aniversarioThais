@@ -5,6 +5,72 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---------- Renderização dinâmica dos presentes ----------
+  const giftsContainer = document.getElementById('gifts-container');
+
+  if (giftsContainer && typeof gifts !== 'undefined') {
+    // Agrupa os presentes por categoria, mantendo a ordem de aparição
+    const categorias = [];
+    const categoriaMap = {};
+
+    gifts.forEach(gift => {
+      if (!categoriaMap[gift.categoria]) {
+        categoriaMap[gift.categoria] = [];
+        categorias.push(gift.categoria);
+      }
+      categoriaMap[gift.categoria].push(gift);
+    });
+
+    // Para cada categoria, cria a seção com header e grid de cards
+    categorias.forEach(catNome => {
+      const itens = categoriaMap[catNome];
+      const valores = itens.map(g => g.valorNum);
+      const min = Math.min(...valores);
+      const max = Math.max(...valores);
+      const faixaPreco = min === max
+        ? `R$ ${min}`
+        : `R$ ${min} – R$ ${max}`;
+
+      // Monta o HTML de cada card
+      const cardsHTML = itens.map(gift => {
+        // Estilo da imagem: cor de fundo + imagem (se existir)
+        let imgStyle = `background-color: ${gift.cor};`;
+        if (gift.imagem) {
+          imgStyle += ` background-image: url('${gift.imagem}'); background-size: cover; background-position: center;`;
+        }
+
+        return `
+            <div class="gift-card" data-gift-id="${gift.id}">
+              <div class="gift-card-image" style="${imgStyle}">
+                <div class="gift-card-action">
+                  <button type="button" data-gift-id="${gift.id}">Presentear</button>
+                </div>
+              </div>
+              <div class="gift-card-body">
+                <p class="gift-card-country">${gift.pais}</p>
+                <h4 class="gift-card-title">${gift.nome}</h4>
+                <p class="gift-card-price">${gift.valor}</p>
+              </div>
+            </div>`;
+      }).join('');
+
+      // Monta a categoria completa
+      const categoriaHTML = `
+        <div class="gift-category fade-up">
+          <div class="gift-category-header">
+            <h3>${catNome}</h3>
+            <span class="price-range">${faixaPreco}</span>
+          </div>
+          <div class="gifts-grid">
+            ${cardsHTML}
+          </div>
+        </div>`;
+
+      giftsContainer.insertAdjacentHTML('beforeend', categoriaHTML);
+    });
+  }
+
+
   // ---------- Header scroll effect ----------
   const header = document.querySelector('.header');
 
