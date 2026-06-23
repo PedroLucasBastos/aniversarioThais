@@ -31,7 +31,7 @@ const gifts = [
     cor: '#C8B49A',
     imagem: 'Img/FotosLugares/CafeManhaParis.jpg',
     qrCode: 'Img/qrcodes/cafe-paris.png',
-    pixCopiaECola: '' // adicionar chave Pix
+    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
   },
   {
     id: 3,
@@ -42,9 +42,9 @@ const gifts = [
     valor: 'R$ 150,00',
     valorNum: 150,
     cor: '#D4B896',
-    imagem: 'Img/FotosLugares/croissant-lisboa.jpg',
-    qrCode: 'Img/qrcodes/croissant-lisboa.png',
-    pixCopiaECola: '' // adicionar chave Pix
+    imagem: 'Img/FotosLugares/drinkPuntaCana.jpg',
+    qrCode: 'Img/qrcodes/drinkPuntaCana.png',
+    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
   },
 
   /* ── Categoria 2: Experiências Inesquecíveis ── */
@@ -57,9 +57,9 @@ const gifts = [
     valor: 'R$ 200,00',
     valorNum: 200,
     cor: '#A0B8C8',
-    imagem: 'Img/FotosLugares/barco-grecia.jpg',
-    qrCode: 'Img/qrcodes/barco-grecia.png',
-    pixCopiaECola: '' // adicionar chave Pix
+    imagem: 'Img/FotosLugares/nadoGolfinho.jpg',
+    qrCode: 'Img/qrcodes/nadoGolfinho.png',
+    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
   },
   {
     id: 5,
@@ -70,22 +70,22 @@ const gifts = [
     valor: 'R$ 250,00',
     valorNum: 250,
     cor: '#C4A882',
-    imagem: 'Img/FotosLugares/jantar-roma.jpg',
-    qrCode: 'Img/qrcodes/jantar-roma.png',
-    pixCopiaECola: '' // adicionar chave Pix
+    imagem: 'Img/FotosLugares/jantarRoma.jpg',
+    qrCode: 'Img/qrcodes/jantarRoma.png',
+    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
   },
   {
     id: 6,
     categoria: 'Experiências Inesquecíveis',
     pais: 'França',
     nome: 'Museus',
-    descricao: 'Uma visita às galerias mais icônicas de Paris — do Louvre ao Musée d\'Orsay — mergulhando nas obras-primas da arte mundial. Cultura, beleza e inspiração em cada sala.',
+    descricao: 'Uma visita às galerias mais icônicas de Paris, do Louvre ao Musée d\'Orsay, mergulhando nas obras-primas da arte mundial. Cultura, beleza e inspiração em cada sala.',
     valor: 'R$ 300,00',
     valorNum: 300,
     cor: '#B4BCCC',
-    imagem: 'Img/FotosLugares/museus-franca.jpg',
-    qrCode: 'Img/qrcodes/museus-franca.png',
-    pixCopiaECola: '' // adicionar chave Pix
+    imagem: 'Img/FotosLugares/museu-franca.jpg',
+    qrCode: 'Img/qrcodes/museu-franca.png',
+    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
   },
 
   /* ── Categoria 3: Sonhos Maiores ── */
@@ -93,13 +93,13 @@ const gifts = [
     id: 7,
     categoria: 'Sonhos Maiores',
     pais: 'Suíça',
-    nome: 'Passeio de teleférico nos Alpes Suíços',
-    descricao: 'Contemplar montanhas cobertas de neve e paisagens de tirar o fôlego é uma experiência única, perfeita para transformar uma viagem em uma lembrança inesquecível.',
+    nome: 'Passeio de trem pelos Alpes Suíços',
+    descricao: 'Entre montanhas majestosas, lagos cristalinos e paisagens de tirar o fôlego, este presente representa uma viagem inesquecível pelos Alpes Suíços durante o verão.',
     valor: 'R$ 350,00',
     valorNum: 350,
     cor: '#B0C4C8',
-    imagem: 'Img/FotosLugares/bariloche.jpg',
-    qrCode: 'Img/qrcodes/bariloche.png',
+    imagem: 'Img/FotosLugares/passeioTrem.jpg',
+    qrCode: 'Img/qrcodes/passeioTrem.png',
     pixCopiaECola: '' // adicionar chave Pix
   },
   {
