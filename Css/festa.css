@@ -1,0 +1,223 @@
+/* ---------- Estilos específicos da página A Festa ---------- */
+.festa-main {
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+/* Seção de apresentação */
+.festa-hero {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 64px;
+  padding: 0 var(--margin-mobile);
+}
+
+.festa-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.festa-subtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--on-surface-variant);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* Cards de informações do evento */
+.festa-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 480px;
+  margin: 0 auto 40px;
+}
+
+.festa-info-card {
+  background: #FFFFFF;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-lg);
+  padding: 24px 16px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.festa-info-card:hover {
+  box-shadow: var(--shadow-ambient);
+}
+
+.festa-info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px;
+  border-radius: var(--radius-full);
+  background: rgba(201, 165, 92, 0.12);
+  color: var(--primary);
+}
+
+.festa-info-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.festa-info-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  margin-bottom: 4px;
+}
+
+.festa-info-value {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+/* Emoji decorativo */
+.festa-emoji {
+  font-size: 40px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Seção Local da Festa */
+.festa-local {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+}
+
+.festa-local-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.festa-local-header h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.festa-local-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--on-surface);
+  margin-bottom: 4px;
+}
+
+.festa-local-address {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  font-style: italic;
+}
+
+/* Mapa */
+.festa-map-wrapper {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-ambient);
+  border: 1px solid var(--outline-variant);
+  margin-bottom: 32px;
+}
+
+.festa-map-wrapper iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  display: block;
+}
+
+/* Botão Como Chegar */
+.festa-actions {
+  text-align: center;
+}
+
+.festa-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(45deg, var(--gold), var(--gold-light));
+  color: var(--on-primary);
+  padding: 18px 40px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.festa-directions-btn:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+.festa-directions-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsivo */
+@media (min-width: 768px) {
+  .festa-title {
+    font-size: 40px;
+  }
+
+  .festa-hero,
+  .festa-local {
+    padding: 0 var(--gutter);
+  }
+
+  .festa-map-wrapper iframe {
+    height: 400px;
+  }
+
+  .festa-local-header h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .festa-main {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .festa-info-grid {
+    gap: 12px;
+  }
+
+  .festa-info-card {
+    padding: 20px 12px;
+  }
+
+  .festa-info-value {
+    font-size: 18px;
+  }
+
+  .festa-directions-btn {
+    padding: 16px 32px;
+    font-size: 13px;
+  }
+}
