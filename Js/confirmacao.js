@@ -6,9 +6,9 @@
 (function () {
 
   // Número do WhatsApp (apenas números, com código do país)
-  const WHATSAPP_NUMERO = '+5522997065012'; // ← substitua pelo número real
+  const WHATSAPP_NUMERO = '5522997065012';
 
-  // Mensagem pré-preenchida
+  // 2. String limpa (sem caracteres invisíveis) e com quebras de linha ajustadas
   const WHATSAPP_MENSAGEM =
     'Oi, Thais! 💛✨\n\n' +
     'Passando para confirmar minha presença no seu aniversário. ' +
@@ -18,7 +18,8 @@
 
   const btn = document.getElementById('rsvpBtn');
   if (btn) {
-    const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(WHATSAPP_MENSAGEM)}`;
+    // 3. Usando a API direta em vez do wa.me (mais estável para mobile)
+    const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(WHATSAPP_MENSAGEM)}`;
     btn.href = url;
   }
 
