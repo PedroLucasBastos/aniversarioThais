@@ -217,6 +217,7 @@ button {
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
+  margin-bottom: 10px;
 }
 
 .btn-primary:hover {
@@ -429,7 +430,8 @@ button {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-color: #FAF8F3; /* Fundo pérola idêntico ao site para as laterais em branco */
+  background-color: #FAF8F3;
+  /* Fundo pérola idêntico ao site para as laterais em branco */
 }
 
 /* Slides do slideshow */
