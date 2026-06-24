@@ -160,33 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 15000); // 15 seconds
   }
 
-  // ---------- Parallax scroll effect for the dream section image ----------
-  const dreamImg = document.querySelector('.dream-image img');
-  const dreamContainer = document.querySelector('.dream-image');
-
-  if (dreamImg && dreamContainer) {
-    const handleParallax = () => {
-      const rect = dreamContainer.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      // Check if the image container is visible in the viewport
-      if (rect.top < viewportHeight && rect.bottom > 0) {
-        // Calculate the percentage of the container's progress through the viewport
-        const scrollRange = viewportHeight + rect.height;
-        const scrollOffset = viewportHeight - rect.top;
-        const progress = Math.min(Math.max(scrollOffset / scrollRange, 0), 1); // Clamp between 0 and 1
-
-        // Translate the image vertically from 0% (enters viewport) to -10% (leaves viewport)
-        // Since image has height: 110%, this shifts it upward smoothly as we scroll down
-        const translateY = -10 * progress;
-        dreamImg.style.transform = `translateY(${translateY}%)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleParallax, { passive: true });
-    // Trigger once on load to set initial position
-    handleParallax();
-  }
+  // ---------- Parallax desativado: imagem dream exibe altura completa ----------
 
   // ---------- Navegação para a página de pagamento ----------
   // Usa delegação de eventos na seção de presentes para maior performance.
