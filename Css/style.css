@@ -297,6 +297,16 @@ button {
   object-fit: contain;
 }
 
+.logo-popup {
+  display: flex;
+  align-items: center;
+  height: 100px;
+
+  width: auto;
+  object-fit: contain;
+
+}
+
 .header-nav {
   display: none;
   align-items: center;

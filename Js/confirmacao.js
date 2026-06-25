@@ -25,23 +25,49 @@
     return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(msg)}`;
   }
 
-  // ---------- Fluxo de confirmação em 2 etapas ----------
+  // ---------- Modal de confirmação ----------
   const openBtn = document.getElementById('rsvpOpenBtn');
-  const nameBox = document.getElementById('rsvpNameBox');
+  const modal = document.getElementById('rsvpModal');
+  const closeBtn = document.getElementById('rsvpCloseBtn');
   const nameInput = document.getElementById('rsvpNameInput');
   const confirmBtn = document.getElementById('rsvpConfirmBtn');
 
-  if (openBtn && nameBox && nameInput && confirmBtn) {
+  function openModal() {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => nameInput.focus(), 350);
+  }
 
-    // Etapa 1: Ao clicar no botão inicial, exibir caixa de nome
-    openBtn.addEventListener('click', () => {
-      openBtn.style.display = 'none';
-      nameBox.classList.add('visible');
-      // Foco automático no campo de nome
-      setTimeout(() => nameInput.focus(), 350);
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    // Limpar campo e desabilitar botão
+    nameInput.value = '';
+    confirmBtn.classList.add('disabled');
+    confirmBtn.href = '#';
+  }
+
+  if (openBtn && modal && closeBtn && nameInput && confirmBtn) {
+
+    // Abrir modal ao clicar no botão
+    openBtn.addEventListener('click', openModal);
+
+    // Fechar ao clicar no X
+    closeBtn.addEventListener('click', closeModal);
+
+    // Fechar ao clicar fora do modal (no overlay)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
     });
 
-    // Etapa 2: Habilitar/desabilitar botão conforme o campo de nome
+    // Fechar com Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+
+    // Habilitar/desabilitar botão conforme o campo de nome
     nameInput.addEventListener('input', () => {
       const nome = nameInput.value.trim();
       if (nome.length > 0) {
