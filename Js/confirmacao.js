@@ -8,19 +8,57 @@
   // Número do WhatsApp (apenas números, com código do país)
   const WHATSAPP_NUMERO = '5522997065012';
 
-  // 2. String limpa (sem caracteres invisíveis) e com quebras de linha ajustadas
-  const WHATSAPP_MENSAGEM =
-    'Oi, Thais! 💛✨\n\n' +
-    'Passando para confirmar minha presença no seu aniversário. ' +
-    'Estou muito feliz por poder celebrar esse dia tão especial com você ' +
-    'e mal posso esperar para comemorar juntos! 🥂🎉\n\n' +
-    'Nos vemos em breve! 💕';
+  // Função que monta a mensagem com o nome da pessoa
+  function buildMessage(nome) {
+    return (
+      'Oi, Thais! 💛✨\n\n' +
+      'Eu, ' + nome + ', estou passando para confirmar minha presença no seu aniversário. ' +
+      'Estou muito feliz por poder celebrar esse dia tão especial com você ' +
+      'e mal posso esperar para comemorar juntos! 🥂🎉\n\n' +
+      'Nos vemos em breve! 💕'
+    );
+  }
 
-  const btn = document.getElementById('rsvpBtn');
-  if (btn) {
-    // 3. Usando a API direta em vez do wa.me (mais estável para mobile)
-    const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(WHATSAPP_MENSAGEM)}`;
-    btn.href = url;
+  // Função que monta a URL do WhatsApp
+  function buildWhatsAppUrl(nome) {
+    const msg = buildMessage(nome.trim());
+    return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMERO}&text=${encodeURIComponent(msg)}`;
+  }
+
+  // ---------- Fluxo de confirmação em 2 etapas ----------
+  const openBtn = document.getElementById('rsvpOpenBtn');
+  const nameBox = document.getElementById('rsvpNameBox');
+  const nameInput = document.getElementById('rsvpNameInput');
+  const confirmBtn = document.getElementById('rsvpConfirmBtn');
+
+  if (openBtn && nameBox && nameInput && confirmBtn) {
+
+    // Etapa 1: Ao clicar no botão inicial, exibir caixa de nome
+    openBtn.addEventListener('click', () => {
+      openBtn.style.display = 'none';
+      nameBox.classList.add('visible');
+      // Foco automático no campo de nome
+      setTimeout(() => nameInput.focus(), 350);
+    });
+
+    // Etapa 2: Habilitar/desabilitar botão conforme o campo de nome
+    nameInput.addEventListener('input', () => {
+      const nome = nameInput.value.trim();
+      if (nome.length > 0) {
+        confirmBtn.classList.remove('disabled');
+        confirmBtn.href = buildWhatsAppUrl(nome);
+      } else {
+        confirmBtn.classList.add('disabled');
+        confirmBtn.href = '#';
+      }
+    });
+
+    // Bloquear clique se estiver desabilitado
+    confirmBtn.addEventListener('click', (e) => {
+      if (confirmBtn.classList.contains('disabled')) {
+        e.preventDefault();
+      }
+    });
   }
 
   // ---------- Header scroll ----------
