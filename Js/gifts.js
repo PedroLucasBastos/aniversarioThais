@@ -18,7 +18,7 @@ const gifts = [
     cor: '#E8C9A0',
     imagem: 'Img/FotosLugares/GelatoVeneza.jpg',
     qrCode: 'Img/qrcodes/gelato.png',
-    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F'
+    pixCopiaECola: '00020126330014BR.GOV.BCB.PIX011105687021744520400005303986540580.005802BR5920THAIS GOMES TEIXEIRA6009SAO PAULO622605226UqTvfNzZ0DEBNmo9BWWVh6304B497'
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const gifts = [
     cor: '#C8B49A',
     imagem: 'Img/FotosLugares/CafeManhaParis.jpg',
     qrCode: 'Img/qrcodes/cafe-paris.png',
-    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
+    pixCopiaECola: '00020126330014BR.GOV.BCB.PIX0111056870217445204000053039865406100.005802BR5920THAIS GOMES TEIXEIRA6009SAO PAULO622605225RiYUEIjFVxchFLLPiXD946304377B' // adicionar chave Pix
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const gifts = [
     cor: '#D4B896',
     imagem: 'Img/FotosLugares/drinkPuntaCana.jpg',
     qrCode: 'Img/qrcodes/drinkPuntaCana.png',
-    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
+    pixCopiaECola: '00020126330014BR.GOV.BCB.PIX0111056870217445204000053039865406150.005802BR5920THAIS GOMES TEIXEIRA6009SAO PAULO622605224x46ezRaGvGWvT2xJYhMxv6304810F' // adicionar chave Pix
   },
 
   /* ── Categoria 2: Experiências Inesquecíveis ── */
@@ -59,7 +59,7 @@ const gifts = [
     cor: '#A0B8C8',
     imagem: 'Img/FotosLugares/nadoGolfinho.jpg',
     qrCode: 'Img/qrcodes/nadoGolfinho.png',
-    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
+    pixCopiaECola: '00020126330014BR.GOV.BCB.PIX0111056870217445204000053039865406200.005802BR5920THAIS GOMES TEIXEIRA6009SAO PAULO622605223aXnIc8RkY4Qb4dO1KFRTf63047AE6' // adicionar chave Pix
   },
   {
     id: 5,
@@ -72,7 +72,7 @@ const gifts = [
     cor: '#C4A882',
     imagem: 'Img/FotosLugares/jantarRoma.jpg',
     qrCode: 'Img/qrcodes/jantarRoma.png',
-    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
+    pixCopiaECola: '00020126330014BR.GOV.BCB.PIX0111056870217445204000053039865406250.005802BR5920THAIS GOMES TEIXEIRA6009SAO PAULO622605222D7hno7BcauPhFrZyRVnFp6304A156' // adicionar chave Pix
   },
   {
     id: 6,
@@ -85,7 +85,7 @@ const gifts = [
     cor: '#B4BCCC',
     imagem: 'Img/FotosLugares/museu-franca.jpg',
     qrCode: 'Img/qrcodes/museu-franca.png',
-    pixCopiaECola: '00020126580014BR.GOV.BCB.PIX013695b42786-444b-4118-9ce7-f35cac8325b752040000530398654040.015802BR5925Pedro Lucas Bastos da Sil6009SAO PAULO62140510IZYBZs0qaw6304ED2F' // adicionar chave Pix
+    pixCopiaECola: '00020126330014BR.GOV.BCB.PIX0111056870217445204000053039865406300.005802BR5920THAIS GOMES TEIXEIRA6009SAO PAULO622605224jEl5LQinZloCXeyY6Xm4f63046EF9' // adicionar chave Pix
   },
 
   /* ── Categoria 3: Sonhos Maiores ── */
@@ -100,7 +100,7 @@ const gifts = [
     cor: '#B0C4C8',
     imagem: 'Img/FotosLugares/passeioTrem.jpg',
     qrCode: 'Img/qrcodes/passeioTrem.png',
-    pixCopiaECola: '' // adicionar chave Pix
+    pixCopiaECola: '00020126330014BR.GOV.BCB.PIX0111056870217445204000053039865406350.005802BR5920THAIS GOMES TEIXEIRA6009SAO PAULO622605227XO8Mk1psRuPdic8SJIzRj6304EA38' // adicionar chave Pix
   },
   {
     id: 8,
@@ -113,7 +113,7 @@ const gifts = [
     cor: '#C8C0D8',
     imagem: 'Img/FotosLugares/disney.jpg',
     qrCode: 'Img/qrcodes/disney.png',
-    pixCopiaECola: '' // adicionar chave Pix
+    pixCopiaECola: '00020126330014BR.GOV.BCB.PIX0111056870217445204000053039865406400.005802BR5920THAIS GOMES TEIXEIRA6009SAO PAULO622605224XPw7vgV0C2eUcGjFaWKSr6304FA9D' // adicionar chave Pix
   },
 
 ];
