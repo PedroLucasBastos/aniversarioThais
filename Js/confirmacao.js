@@ -6,7 +6,7 @@
 (function () {
 
   // Número do WhatsApp (apenas números, com código do país)
-  const WHATSAPP_NUMERO = '5522997065012';
+  const WHATSAPP_NUMERO = '5521999131073';
 
   // Função que monta a mensagem com o nome da pessoa
   function buildMessage(nome) {
