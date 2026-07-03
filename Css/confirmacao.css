@@ -268,7 +268,11 @@
   }
 
   .rsvp-overlay-btn {
-    padding: 14px 28px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 24px;
     font-size: 12px;
   }
 
