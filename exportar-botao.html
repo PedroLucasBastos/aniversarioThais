@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exportar Botão — PNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f5f5f5;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .instructions {
+      margin-bottom: 40px;
+      text-align: center;
+      max-width: 500px;
+      color: #333;
+    }
+
+    .instructions h2 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .instructions p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* Canvas invisível para renderização */
+    #canvas { display: none; }
+
+    /* Prévia do botão */
+    .preview {
+      margin-bottom: 30px;
+      padding: 40px 60px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Botão idêntico ao do site */
+    #button-to-export {
+      display: inline-block;
+      background: linear-gradient(45deg, #C9A55C, #E9DDCB);
+      color: #FFFFFF;
+      padding: 16px 32px;
+      border-radius: 9999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .download-btn {
+      background: #4B3B2D;
+      color: white;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #775A18;
+    }
+
+    .size-options {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .size-option {
+      padding: 8px 20px;
+      border: 2px solid #C9A55C;
+      border-radius: 6px;
+      background: white;
+      color: #4B3B2D;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .size-option.active, .size-option:hover {
+      background: #C9A55C;
+      color: white;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 11px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="instructions">
+    <h2>Exportar Botão como PNG</h2>
+    <p>Escolha o tamanho desejado e clique em "Baixar PNG". O botão será exportado com fundo transparente, pronto para uso na arte do PDF.</p>
+  </div>
+
+  <div class="preview">
+    <div id="button-to-export">Confirme sua presença</div>
+  </div>
+
+  <div class="size-options">
+    <button class="size-option" data-scale="1">1x (normal)</button>
+    <button class="size-option active" data-scale="2">2x (recomendado)</button>
+    <button class="size-option" data-scale="3">3x (alta resolução)</button>
+    <button class="size-option" data-scale="4">4x (impressão)</button>
+  </div>
+
+  <button class="download-btn" onclick="exportButton()">⬇ Baixar PNG</button>
+
+  <p class="note">O PNG será gerado com fundo transparente.</p>
+
+  <canvas id="canvas"></canvas>
+
+  <script>
+    let selectedScale = 2;
+
+    // Gerenciar seleção de tamanho
+    document.querySelectorAll('.size-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.size-option').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedScale = parseInt(btn.dataset.scale);
+      });
+    });
+
+    function exportButton() {
+      const button = document.getElementById('button-to-export');
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const scale = selectedScale;
+
+      // Medidas do botão
+      const rect = button.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+
+      canvas.width = w * scale;
+      canvas.height = h * scale;
+      ctx.scale(scale, scale);
+
+      // Fundo transparente
+      ctx.clearRect(0, 0, w, h);
+
+      // Desenhar pill shape
+      const radius = h / 2;
+      ctx.beginPath();
+      ctx.moveTo(radius, 0);
+      ctx.lineTo(w - radius, 0);
+      ctx.arcTo(w, 0, w, radius, radius);
+      ctx.arcTo(w, h, w - radius, h, radius);
+      ctx.lineTo(radius, h);
+      ctx.arcTo(0, h, 0, h - radius, radius);
+      ctx.arcTo(0, 0, radius, 0, radius);
+      ctx.closePath();
+
+      // Gradiente 45deg
+      const grad = ctx.createLinearGradient(0, h, w, 0);
+      grad.addColorStop(0, '#C9A55C');
+      grad.addColorStop(1, '#E9DDCB');
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Texto
+      const computedStyle = window.getComputedStyle(button);
+      const fontSize = parseFloat(computedStyle.fontSize);
+      const letterSpacing = parseFloat(computedStyle.letterSpacing) || (fontSize * 0.1);
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = `600 ${fontSize}px 'Inter', sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      // Renderizar com letter-spacing
+      const text = 'CONFIRME SUA PRESENÇA';
+      drawTextWithSpacing(ctx, text, w / 2, h / 2, letterSpacing);
+
+      // Baixar
+      canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `confirme-sua-presenca-${scale}x.png`;
+        a.click();
+        URL.revokeObjectURL(url);
+      }, 'image/png');
+    }
+
+    function drawTextWithSpacing(ctx, text, x, y, spacing) {
+      // Calcular largura total com espaçamento
+      let totalWidth = 0;
+      for (let i = 0; i < text.length; i++) {
+        totalWidth += ctx.measureText(text[i]).width;
+        if (i < text.length - 1) totalWidth += spacing;
+      }
+
+      // Desenhar centralizado
+      let currentX = x - totalWidth / 2;
+      for (let i = 0; i < text.length; i++) {
+        const charWidth = ctx.measureText(text[i]).width;
+        ctx.fillText(text[i], currentX + charWidth / 2, y);
+        currentX += charWidth + spacing;
+      }
+    }
+  </script>
+
+</body>
+</html>
