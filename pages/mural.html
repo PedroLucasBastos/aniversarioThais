@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Mural de Carinho — Deixe sua mensagem especial para a Thaís na celebração dos seus 40 anos.">
+  <title>Mural de Carinho — Thaís 40</title>
+  <link rel="icon" type="image/png" href="../Img/icons/boloVela40.png">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="stylesheet" href="../Css/mural.css">
+</head>
+
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        40 anos da Thaís
+        <img src="../Img/icons/boloVela40.png" alt="" class="logo-icon">
+      </a>
+
+      <nav class="header-nav">
+        <a href="../index.html#hero">O Convite</a>
+        <a href="../index.html#sonho">A Jornada</a>
+        <a href="../index.html#presentes">Lista de Presentes</a>
+        <a href="festa.html">A Festa</a>
+        <a href="confirmacao.html">Confirme sua presença</a>
+        <a href="mural.html" class="active">Mural</a>
+      </nav>
+
+      <a href="../index.html#presentes" class="header-cta btn-primary" style="padding: 10px 24px; font-size: 11px;">
+        Conheça os Presentes
+      </a>
+
+      <button class="mobile-menu-btn" aria-label="Abrir menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" aria-label="Fechar menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <a href="../index.html#hero">O Convite</a>
+    <a href="../index.html#sonho">A Jornada</a>
+    <a href="../index.html#presentes">Lista de Presentes</a>
+    <a href="festa.html">A Festa</a>
+    <a href="confirmacao.html">Confirme sua presença</a>
+    <a href="mural.html">Mural</a>
+  </div>
+
+  <!-- ========== Conteúdo Principal ========== -->
+  <main class="mural-main">
+
+    <!-- Hero do Mural -->
+    <section class="mural-hero">
+      <h1 class="mural-title">Mural de Carinho</h1>
+      <p class="mural-subtitle">
+        Deixe sua mensagem especial e faça parte dessa celebração.
+        Suas palavras são o melhor presente.
+      </p>
+      <div class="mural-divider"></div>
+    </section>
+
+    <!-- Botão CTA Desktop -->
+    <div class="mural-cta-wrapper">
+      <button id="muralCtaBtn" class="mural-cta-btn" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+          <path
+            d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+        </svg>
+        Deixe sua Mensagem
+      </button>
+    </div>
+
+    <!-- Loading -->
+    <div id="muralLoading" class="mural-loading" style="display: none;">
+      <div class="mural-spinner"></div>
+      <p class="mural-loading-text">Carregando mensagens…</p>
+    </div>
+
+    <!-- Empty State -->
+    <div id="muralEmpty" class="mural-empty" style="display: none;">
+      <div class="mural-empty-icon">💛</div>
+      <h3 class="mural-empty-title">Nenhuma mensagem ainda</h3>
+      <p class="mural-empty-text">Seja a primeira pessoa a deixar uma mensagem de carinho para a Thaís!</p>
+    </div>
+
+    <!-- Grid de Mensagens (Masonry) -->
+    <div id="muralGrid" class="mural-grid"></div>
+
+    <!-- FAB Mobile -->
+    <button id="muralFab" class="mural-fab" type="button" aria-label="Deixar mensagem">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+      </svg>
+    </button>
+
+  </main>
+
+  <!-- ========== Modal ========== -->
+  <div id="muralModal" class="mural-modal-overlay">
+    <div class="mural-modal">
+      <button id="muralCloseBtn" class="mural-modal-close" type="button" aria-label="Fechar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <h2 class="mural-modal-title">Deixe seu carinho</h2>
+      <p class="mural-modal-desc">Escreva uma mensagem especial para a Thaís</p>
+
+      <form id="muralForm">
+        <div class="mural-form-group">
+          <label class="mural-form-label" for="muralNome">Seu nome</label>
+          <input type="text" id="muralNome" class="mural-form-input" placeholder="Como você se chama?"
+            autocomplete="off" maxlength="100" required>
+        </div>
+
+        <div class="mural-form-group">
+          <label class="mural-form-label" for="muralMensagem">Sua mensagem</label>
+          <textarea id="muralMensagem" class="mural-form-textarea"
+            placeholder="Escreva sua mensagem de carinho para a Thaís…" maxlength="1000" required></textarea>
+          <p id="muralCharCounter" class="mural-form-counter">0/1000</p>
+        </div>
+
+        <div class="mural-modal-actions">
+          <button type="button" id="muralCancelBtn" class="btn-cancel">Cancelar</button>
+          <button type="submit" id="muralSubmitBtn" class="btn-submit">
+            <span class="btn-spinner"></span>
+            <span class="btn-text">Enviar</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast de notificação -->
+  <div id="muralToast" class="mural-toast"></div>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Thaís 40</div>
+      <p class="footer-text">
+        Mais do que uma viagem, cada presente representa carinho, lembranças
+        e experiências que ficarão para sempre. Com amor, Thais ❤️
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../Js/mural.js"></script>
+
+</body>
+
+</html>

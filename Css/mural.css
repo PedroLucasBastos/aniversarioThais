@@ -1,0 +1,624 @@
+/* ============================================
+   Mural de Carinho — Estilos
+   Identidade: Golden Jubilee Voyage
+   ============================================ */
+
+/* ---------- Mural Main ---------- */
+.mural-main {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+/* ---------- Mural Hero ---------- */
+.mural-hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  padding: 0 var(--margin-mobile);
+}
+
+.mural-hero .mural-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .mural-hero .mural-title {
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+}
+
+.mural-hero .mural-subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4e463a;
+}
+
+/* ---------- Botão "Deixe sua Mensagem" ---------- */
+.mural-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.mural-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #B8965A;
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mural-cta-btn:hover {
+  background: #a88850;
+}
+
+.mural-cta-btn:active {
+  transform: scale(0.98);
+}
+
+.mural-cta-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ---------- FAB Mobile ---------- */
+.mural-fab {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 40;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--gold), var(--gold-light));
+  color: var(--on-primary);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(74, 65, 42, 0.25);
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.mural-fab:hover {
+  transform: scale(1.1);
+}
+
+.mural-fab:active {
+  transform: scale(0.9);
+}
+
+.mural-fab svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+@media (max-width: 767px) {
+  .mural-fab {
+    display: flex;
+  }
+}
+
+/* ---------- Masonry Grid ---------- */
+.mural-grid {
+  column-count: 1;
+  column-gap: 24px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+}
+
+@media (min-width: 600px) {
+  .mural-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mural-grid {
+    column-count: 3;
+    padding: 0 var(--gutter);
+  }
+}
+
+/* ---------- Message Card ---------- */
+.mural-card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid #D4C5A9;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: cardFadeIn 0.5s ease-out both;
+}
+
+.mural-card:nth-child(odd) {
+  background-color: #f4f4f0;
+}
+
+.mural-card:nth-child(even) {
+  background-color: #F9F8F4;
+}
+
+.mural-card:hover {
+  border-color: #B8965A;
+}
+
+/* Ícone decorativo de aspas */
+.mural-card-quote {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  color: var(--outline-variant);
+  opacity: 0.5;
+  line-height: 1;
+  font-family: var(--font-display);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mural-card:hover .mural-card-quote {
+  opacity: 0.8;
+  color: var(--gold);
+}
+
+/* Conteúdo da mensagem */
+.mural-card-message {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #765a24;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+/* Footer do card: avatar + nome + data */
+.mural-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mural-card-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Cores de avatar alternadas */
+.mural-card:nth-child(odd) .mural-card-avatar {
+  background-color: #f0e1c1;
+  color: #6e634a;
+}
+
+.mural-card:nth-child(even) .mural-card-avatar {
+  background-color: #a79a80;
+  color: #3b321e;
+}
+
+/* Card 3, 7... tem cor primária */
+.mural-card:nth-child(3n) .mural-card-avatar {
+  background-color: #b8965a;
+  color: #452f00;
+}
+
+.mural-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mural-card-name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #1b1c1a;
+}
+
+.mural-card-date {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: #4e463a;
+}
+
+/* ---------- Estado vazio ---------- */
+.mural-empty {
+  text-align: center;
+  padding: 80px 24px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.mural-empty-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.mural-empty-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.mural-empty-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--on-surface-variant);
+}
+
+/* ---------- Loading ---------- */
+.mural-loading {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.mural-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--outline-variant);
+  border-top: 3px solid var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.mural-loading-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  margin-top: 16px;
+}
+
+/* ---------- Modal Overlay ---------- */
+.mural-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 28, 25, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mural-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ---------- Modal ---------- */
+.mural-modal {
+  background: var(--surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 520px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(75, 59, 45, 0.15);
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mural-modal-overlay.active .mural-modal {
+  transform: translateY(0) scale(1);
+}
+
+@media (max-width: 480px) {
+  .mural-modal {
+    padding: 28px 20px;
+    border-radius: var(--radius-lg);
+  }
+}
+
+/* Botão fechar do modal */
+.mural-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.mural-modal-close:hover {
+  background: rgba(201, 165, 92, 0.1);
+  color: var(--primary);
+}
+
+.mural-modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Título do modal */
+.mural-modal-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.mural-modal-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Formulário */
+.mural-form-group {
+  margin-bottom: 20px;
+}
+
+.mural-form-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  margin-bottom: 8px;
+}
+
+.mural-form-input,
+.mural-form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--on-surface);
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: all 0.3s ease;
+  resize: none;
+}
+
+.mural-form-input::placeholder,
+.mural-form-textarea::placeholder {
+  color: var(--outline);
+}
+
+.mural-form-input:focus,
+.mural-form-textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 165, 92, 0.15);
+}
+
+.mural-form-textarea {
+  min-height: 120px;
+}
+
+.mural-form-counter {
+  text-align: right;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--outline);
+  margin-top: 4px;
+}
+
+.mural-form-counter.limit {
+  color: #ba1a1a;
+}
+
+/* Botões do modal */
+.mural-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.mural-modal-actions .btn-cancel {
+  flex: 1;
+  padding: 14px 24px;
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mural-modal-actions .btn-cancel:hover {
+  background: var(--surface-container-low);
+  border-color: var(--primary);
+}
+
+.mural-modal-actions .btn-submit {
+  flex: 1;
+  padding: 14px 24px;
+  background: linear-gradient(45deg, var(--gold), var(--gold-light));
+  color: var(--on-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mural-modal-actions .btn-submit:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.mural-modal-actions .btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Spinner no botão */
+.btn-submit .btn-spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+.btn-submit.loading .btn-spinner {
+  display: inline-block;
+}
+
+.btn-submit.loading .btn-text {
+  opacity: 0.7;
+}
+
+/* ---------- Toast ---------- */
+.mural-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  z-index: 400;
+  padding: 16px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 32px rgba(75, 59, 45, 0.2);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.mural-toast.success {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.mural-toast.error {
+  background: #ba1a1a;
+  color: #ffffff;
+}
+
+.mural-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 480px) {
+  .mural-toast {
+    left: 20px;
+    right: 20px;
+    transform: translateX(0) translateY(100px);
+    text-align: center;
+    white-space: normal;
+    bottom: 24px;
+  }
+
+  .mural-toast.show {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* ---------- Animações ---------- */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger delays para os primeiros cards */
+.mural-card:nth-child(1) { animation-delay: 0.05s; }
+.mural-card:nth-child(2) { animation-delay: 0.1s; }
+.mural-card:nth-child(3) { animation-delay: 0.15s; }
+.mural-card:nth-child(4) { animation-delay: 0.2s; }
+.mural-card:nth-child(5) { animation-delay: 0.25s; }
+.mural-card:nth-child(6) { animation-delay: 0.3s; }
+
+/* ---------- Divider decorativo ---------- */
+.mural-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 16px auto 0;
+}

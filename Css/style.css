@@ -310,7 +310,7 @@ button {
 .header-nav {
   display: none;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
 }
 
 @media (min-width: 768px) {
@@ -321,7 +321,7 @@ button {
 
 .header-nav a {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--on-surface-variant);
   transition: color 0.3s ease;
   padding: 4px 8px;

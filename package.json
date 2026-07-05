@@ -1,0 +1,9 @@
+{
+  "name": "aniversario-thais",
+  "version": "1.0.0",
+  "description": "Site de convite de aniversário da Thaís",
+  "private": true,
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0"
+  }
+}
